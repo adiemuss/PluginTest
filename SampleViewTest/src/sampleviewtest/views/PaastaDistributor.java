@@ -66,8 +66,8 @@ public class PaastaDistributor extends ViewPart {
 		viewer = new TableViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
 		
 		viewer.setContentProvider(ArrayContentProvider.getInstance());
-		viewer.setInput(new String[] { "function12", "function2", "Three" });
-	viewer.setLabelProvider(new ViewLabelProvider());
+		viewer.setInput(new String[] { "Url Regist", "function2", "function3" });
+		viewer.setLabelProvider(new ViewLabelProvider());
 
 		// Create the help context id for the viewer's control
 		workbench.getHelpSystem().setHelp(viewer.getControl(), "SampleViewTest.viewer");
@@ -97,12 +97,21 @@ public class PaastaDistributor extends ViewPart {
 		fillLocalToolBar(bars.getToolBarManager());
 	}
 
+	/**
+	 * 우측 상단 3점 풀다운 메뉴 
+	 * @param manager
+	 */
 	private void fillLocalPullDown(IMenuManager manager) {
 		manager.add(action1);
 		manager.add(new Separator());
 		manager.add(action2);
+		manager.add(action2);		
 	}
-
+	
+	/**
+	 * 우클릭 메뉴
+	 * @param manager
+	 */
 	private void fillContextMenu(IMenuManager manager) {
 		manager.add(action1);
 		manager.add(action2);
@@ -110,7 +119,13 @@ public class PaastaDistributor extends ViewPart {
 		manager.add(new Separator(IWorkbenchActionConstants.MB_ADDITIONS));
 	}
 	
+	/**
+	 * 우측 상단 아이콘형 툴바
+	 * @param manager
+	 */
 	private void fillLocalToolBar(IToolBarManager manager) {
+		manager.add(action1);
+		manager.add(action2);
 		manager.add(action1);
 		manager.add(action2);
 	}
